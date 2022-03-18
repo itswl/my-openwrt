@@ -11,4 +11,12 @@
 #
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.3.100/g' package/base-files/files/bin/config_generate
+
+
+
+# 获取luci-app-openclash 编译po2lmo
+git clone -b master https://github.com/vernesong/OpenClash package/diy-packages/openclash
+pushd package/diy-packages/openclash/luci-app-openclash/tools/po2lmo
+make && sudo make install
+popd
